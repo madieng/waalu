@@ -10,7 +10,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
 /**
  * @ApiResource()
  * @ORM\Entity(repositoryClass="App\Repository\AdRepository")
- * @HasLifecycleCallbacks()
+ * @ORM\HasLifecycleCallbacks()
  */
 class Ad
 {
@@ -52,7 +52,7 @@ class Ad
     private $slug;
 
     /**
-     * @PrePersit
+     * @ORM\PrePersist
      */
     public function initializeCreatedAt()
     {
@@ -60,7 +60,7 @@ class Ad
     }
 
     /**
-     * @PrePersit
+     * @ORM\PrePersist
      */
     public function initializeSlug()
     {

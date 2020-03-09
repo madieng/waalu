@@ -1,12 +1,24 @@
+{# templates/base.html.twig #}
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+	<head>
+		<title>
+			Waalü -
+			{% block title %}Accueil
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+	</head>
+	<body id="page-top">
+		<div class="wrapper">
+			{% include "includes/header.html.twig" %}
+			{% block body %}{% endblock %}
+			{% include "includes/footer.html.twig" %}
+		</div>
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</body>
 </html>
